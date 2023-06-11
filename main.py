@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 import argparse
 import pickle
 import user
@@ -50,7 +48,7 @@ def friends(args: argparse.Namespace):
     user = get_user(args.user)
     friends = user.get_friends_list()
     if len(friends) == 0:
-        print('You have no friends on this account.')
+        print('You have no friends.')
     else:
         friends_str = f"List of friends: {', '.join(str(friend['name']) for friend in friends)}"
         print(friends_str)
@@ -201,4 +199,4 @@ try:
     func = args.func
     func(args)
 except AttributeError as e:
-    print('No command inputted, try again.') 
+    print("usage: main.py [-h] {register,discord,accounts,friends} ...\n\noptions:\n  -h, --help            show this help message and exit\n\nsubcommands:\n  Valid subcommands\n\n  {register,discord,accounts,friends})")
