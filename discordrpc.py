@@ -14,13 +14,17 @@ class Discord():
         self.user_name = user_name
     
     def connect(self):
-        try:
-            logging.info('Attempting to establish connection to Discord.')
-            self.client.connect()
-        except ConnectionRefusedError:
-            logging.error("Couldn't find an active Discord instance.")
-            raise errors.DiscordError() from None
-        logging.info('Connection to Discord established.')
+        while True:
+            try:
+                logging.info('Attempting to establish connection to Discord.')
+                self.client.connect()
+            except:
+                logging.error("Couldn't find an active Discord instance.")
+                print('No active Discord instance found. Please make sure Discord is open.')
+                continue
+            else:
+                logging.info('Connection to Discord established.')
+                break            
     
     def update(self, large_image, large_text, small_text, small_image, status, start=None):
         try:
