@@ -145,7 +145,7 @@ class User:
             'Accept-Language': 'en-US',
             'User-Agent': 'com.nintendo.znca/2.4.0 (iOS 16.2)',
             'Accept': 'application/json',
-            'X-ProductVersion': '2.5.1',
+            'X-ProductVersion': '2.5.2',
             'Content-Type': 'application/json; charset=utf-8',
             'Connection': 'keep-alive',
             'Authorization': 'Bearer',
