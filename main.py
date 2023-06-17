@@ -199,4 +199,4 @@ try:
     func = args.func
     func(args)
 except AttributeError as e:
-    print("usage: main.py [-h] {register,discord,accounts,friends} ...\n\noptions:\n  -h, --help            show this help message and exit\n\nsubcommands:\n  Valid subcommands\n\n  {register,discord,accounts,friends})")
+    print("usage: DiscordRPC4Switch [-h] {register,discord,accounts,friends} ...\n\noptions:\n  -h, --help            show this help message and exit\n\nsubcommands:\n  Valid subcommands\n\n  {register,discord,accounts,friends})")

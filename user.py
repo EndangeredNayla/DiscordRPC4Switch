@@ -3,6 +3,7 @@ import time
 import logging
 import errors
 import datetime
+import itunes_app_scraper.scraper
 
 class User:
     '''
@@ -140,12 +141,20 @@ class User:
             self.get_access_id_token()
             self.get_imink()
             self.start_time_access_id = current_time
+
+        ITUNES_APP_ID = 1234806557
+
+        scraper = itunes_app_scraper.scraper.AppStoreScraper()
+        nso_app_info = scraper.get_app_details(ITUNES_APP_ID, country = 'us')
+        nsoAppVersion = nso_app_info.get('version')
+        
+
         login_headers = {
             'Host': 'api-lp1.znc.srv.nintendo.net',
             'Accept-Language': 'en-US',
             'User-Agent': 'com.nintendo.znca/2.4.0 (iOS 16.2)',
             'Accept': 'application/json',
-            'X-ProductVersion': '2.5.2',
+            'X-ProductVersion': nsoAppVersion,
             'Content-Type': 'application/json; charset=utf-8',
             'Connection': 'keep-alive',
             'Authorization': 'Bearer',

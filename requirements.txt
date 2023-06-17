@@ -1,3 +1,4 @@
+itunes-app-scraper-dmi
+pyinstaller
 pypresence
 requests
-pyinstaller
